@@ -1,5 +1,3 @@
-const prompt = require("prompt");
-
 import * as parseInputs from "./parseInput";
 import { checkBounds } from "./checkFailures";
 import executeDirections from "./executeDirections";
@@ -20,26 +18,26 @@ const main = (input: string) => {
   }
 
   const result = parseInputs.parseOutput(movedRoversArray);
-
   return result;
 };
 
-const testInput = `5 5
-1 2 N
-LMLMLMLMM
-3 3 E
-MMRMMRMRRM`;
+let input = ``;
 
-prompt.start();
+//Uncomment below & paste input above to use input in-line. Comment out lines 30-44 to disable read from file.
+//console.log(main(input))
 
-prompt.get("Rover Input:", function (err, input) {
-  if (err) {
-    return onErr(err);
-  }
-  console.log(main(input));
+const fs = require("fs");
+const readline = require("readline").createInterface({
+  input: fs.createReadStream("./PutInputsHere.txt"),
+  output: process.stdout,
+  console: false,
+  terminal: false,
 });
-
-function onErr(err) {
-  console.log(err);
-  return 1;
-}
+readline.on("line", (line) => {
+  input = input.concat(line, "\n");
+});
+readline.on("close", () => {
+  console.log(`Rover inputs: \n${input}`);
+  console.log(main(input));
+  process.exit(0);
+});

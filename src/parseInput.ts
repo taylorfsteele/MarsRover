@@ -23,7 +23,7 @@ export const createRovers = (input: string) => {
 export const directions = (input: string): string[] => {
   const directions = [];
   const inputArray = input.split("\n");
-  for (let i = 1; i < inputArray.length; i = i + 2) {
+  for (let i = 1; i < inputArray.length - 1; i = i + 2) {
     directions.push(inputArray[i + 1]);
   }
 
