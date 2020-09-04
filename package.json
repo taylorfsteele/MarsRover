@@ -1,0 +1,23 @@
+{
+  "name": "marsrover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "type": "commonjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.6.3",
+    "nodemon": "^2.0.4",
+    "ts-node": "^9.0.0"
+  },
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}
