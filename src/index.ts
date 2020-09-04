@@ -1,10 +1,10 @@
 import * as parseInputs from "./parseInput";
 import { checkBounds } from "./checkFailures";
 import executeDirections from "./executeDirections";
-import { Grid, Rover } from "./Types";
+import { GridCoordinates, Rover } from "./Types";
 
 export const main = (input: string) => {
-  const gridBounds = parseInputs.bounds(input) as Grid;
+  const gridBounds = parseInputs.bounds(input) as GridCoordinates;
   const rovers = parseInputs.createRovers(input) as Rover[];
   const directions = parseInputs.directions(input) as string[];
   const movedRoversArray = [] as Rover[];

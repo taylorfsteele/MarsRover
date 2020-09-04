@@ -1,6 +1,6 @@
-import type { RoverStartingPosition, Rover } from "./Types";
+import type { RoverStartingPosition, Rover, CardinalDirections } from "./Types";
 
-export const createRover = (startingPosition: string) => {
+export const createRover = (startingPosition: string): Rover => {
   const location = parseLocationValues(startingPosition);
   const rover: Rover = {
     position: {
@@ -13,12 +13,12 @@ export const createRover = (startingPosition: string) => {
   return rover;
 };
 
-const parseLocationValues = (startingPosition: string) => {
+const parseLocationValues = (startingPosition: string): RoverStartingPosition => {
   const locationValues = {
     x: parseInt(startingPosition.split(" ")[0]),
     y: parseInt(startingPosition.split(" ")[1]),
-    orientation: startingPosition.split(" ")[2],
-  } as RoverStartingPosition;
+    orientation: startingPosition.split(" ")[2] as CardinalDirections,
+  };
 
   return locationValues;
 };

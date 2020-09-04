@@ -1,4 +1,6 @@
-export interface Grid {
+export type CardinalDirections = "N" | "S" | "E" | "W";
+
+export interface GridCoordinates {
   x: number;
   y: number;
 }
@@ -6,7 +8,7 @@ export interface Grid {
 export interface RoverStartingPosition {
   x: number;
   y: number;
-  orientation: "N" | "S" | "E" | "W";
+  orientation: CardinalDirections;
 }
 
 export interface Rover {
@@ -14,5 +16,5 @@ export interface Rover {
     x: number;
     y: number;
   };
-  orientation: "N" | "S" | "E" | "W";
+  orientation: CardinalDirections;
 }
