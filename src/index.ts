@@ -3,7 +3,7 @@ import { checkBounds } from "./checkFailures";
 import executeDirections from "./executeDirections";
 import { Grid, Rover } from "./Types";
 
-const main = (input: string) => {
+export const main = (input: string) => {
   const gridBounds = parseInputs.bounds(input) as Grid;
   const rovers = parseInputs.createRovers(input) as Rover[];
   const directions = parseInputs.directions(input) as string[];
@@ -21,9 +21,11 @@ const main = (input: string) => {
   return result;
 };
 
-let input = ``;
+//Comment everything below before running npm test
 
-//Uncomment below & paste input above to use input in-line. Comment out lines 30-44 to disable read from file.
+let input = ``; //Paste input here for in-line input
+
+//Uncomment below & paste input above to use input in-line. Comment out lines 30-44 to disable read from file. Need to use in-line for testing
 //console.log(main(input))
 
 const fs = require("fs");
